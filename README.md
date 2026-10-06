@@ -12,7 +12,7 @@ Phase 0 work at the Space Robotics Lab, Tohoku University.
 **Part B · Structures**
 - Grounding: how walls and columns sit in the pavement
 - Wall A and Column A from the same blocks, with Isaac Sim moonquake tests
-- A dome that builds without centering, and its block family
+- The Horizon shell: the same hexagonal block mapped onto an 8 m dome that aims to build without centering, with an interactive explorer (span, rise, tilt, block size)
 - Quick checks and next steps
 
 Live site: https://arhimatrix.github.io/arhimatrix-moonwalk-2-rep_02/

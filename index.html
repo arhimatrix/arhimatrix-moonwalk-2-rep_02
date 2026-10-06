@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Moonwalk 2.0 · Report 02: candidate sites near the lunar south pole, a hexagonal regolith block, a dust-managing pavement, and the first wall and column, tested in Isaac Sim.">
+<meta name="description" content="Moonwalk 2.0 · Report 02: candidate sites near the lunar south pole, a hexagonal regolith block, a dust-managing pavement, and the first wall, column and shell, tested in Isaac Sim.">
 <title>Moonwalk 2.0 · Report 02</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -249,6 +249,7 @@ pre.code{margin:0; background:var(--bg); color:var(--ink); font:12.5px/1.55 var(
 @media (max-width:620px){.dzplay{grid-template-columns:1fr} .dzplay output{white-space:normal}}
 #fleetT tr.supply td{color:var(--muted); border-top:1px solid var(--line)} #fleetT small{font:400 12px var(--mono); color:var(--faint)}
 @media (min-width:981px){.flow5{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (max-width:620px){.play{grid-template-columns:auto 1fr} .play output{grid-column:1/-1; white-space:normal}}
 /* centering */
 .strat{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
 .strat > div{background:var(--surface); padding:22px; display:flex; flex-direction:column; gap:8px}
@@ -288,7 +289,7 @@ footer b{color:var(--ink); font-weight:500}
 
 <nav class="nav" id="nav" aria-label="Sections"><div class="wrap">
 <b>MOONWALK 2.0 <span>· REPORT 02</span></b>
-<a href="#site">Site</a><a href="#ghblock">Block</a><a href="#pad">Pad</a><a href="#dust">Dust</a><a href="#isaac">Isaac Sim</a><a href="#ground">Grounding</a><a href="#wallA">Wall A</a><a href="#columnA">Column</a><a href="#dome">Dome</a><a href="#shell">Shell blocks</a><a href="#checks">Checks</a><a href="#next">Next steps</a><a href="https://arhimatrix.github.io/arhimatrix-moonwalk-2-rep_01/" target="_blank" rel="noopener">Report 01 ↗</a>
+<a href="#site">Site</a><a href="#ghblock">Block</a><a href="#pad">Pad</a><a href="#dust">Dust</a><a href="#isaac">Isaac Sim</a><a href="#ground">Grounding</a><a href="#wallA">Wall A</a><a href="#columnA">Column</a><a href="#dome">Shell</a><a href="#checks">Checks</a><a href="#next">Next steps</a><a href="https://arhimatrix.github.io/arhimatrix-moonwalk-2-rep_01/" target="_blank" rel="noopener">Report 01 ↗</a>
 </div></nav>
 
 <div class="story" id="story">
@@ -911,7 +912,7 @@ for q in range(-R, R + 1):
 <div><span class="fk">Load path</span><h3>Into a wider area of ground</h3><p>Weight and moonquake forces pass from the first course into the plinths, and through the interlocking pavement into the ground around. This is why every Isaac Sim test includes its pavement strip or pad.</p></div>
 <div><span class="fk">Counts</span><h3>Wall A 4 · Column A 6</h3><p>Wall A stands on 4 plinths along its 44-block pavement strip; Column A on 6, one under each corner of the ring, in a 55-block pavement. The hole in each plinth's underside is reserved for an anchor or a service route, still to define.</p></div>
 </div>
-<p class="note" style="margin-top:16px">The same rule applies to every element that rises from the pavement. The dome's base ring (F5-B) will follow it once the shell moves to the hexagonal block family.</p>
+<p class="note" style="margin-top:16px">The same rule applies to every element that rises from the pavement. The Horizon shell's rim ring (54 blocks, section 09) is the next element to ground this way.</p>
 </div></section>
 
 <section class="s" id="wallA"><div class="wrap">
@@ -996,75 +997,53 @@ for q in range(-R, R + 1):
 
 <section class="s" id="dome"><div class="wrap">
 <div class="head">
-<div><p class="eyebrow">09 · Horizon dome</p><h2>A shell that builds without centering</h2></div>
-<p>The habitat vault can also be a dome. A dome closes ring by ring: each finished ring works as a compression ring and carries itself, so it needs no centering: no form or scaffold has to hold it while it is built. The inflatable habitat can serve as formwork, as the program suggests. Every slider regenerates the whole block family.</p>
+<div><p class="eyebrow">09 · Horizon shell</p><h2>A shell that builds without centering</h2></div>
+<p>The shell now uses the same hexagonal block as the pavement, the wall and the column. A pad of tilted blocks is mapped onto a spherical cap, 8 m across and 2.5 m high. Each block keeps its six alternately tilted faces, so it leans on its neighbours as it does in the pavement, and a ring of rim blocks seats the shell at its base. The aim is a shell that carries itself while it grows, with no form or scaffold (centering) to hold it. The flat version of this is pad B in section 05: tilted blocks, held only at the rim, and every block stayed in place.</p>
 </div>
 <div class="bay">
-<div class="view" style="min-height:600px">
-<canvas id="dv" aria-label="3D parametric dome of regolith blocks assembling ring by ring over an inflatable habitat"></canvas>
-<p class="tagline" id="dTag"></p>
-<p class="hint">Drag to orbit · lab model, numbers at lunar scale · blue = inflatable habitat as formwork</p>
+<div class="view" style="min-height:560px">
+<canvas id="shv" aria-label="3D Horizon shell of hexagonal tilted blocks on a spherical cap, built from the rim ring up to the crown"></canvas>
+<p class="tagline">Horizon shell · hexagonal tilt blocks</p>
+<p class="hint">Drag to orbit · beige = rim ring, built first · white = shell, closing at the crown</p>
 </div>
 <div class="panel">
-<div class="ctl"><span class="k">Profile</span><div class="seg" id="dProf" role="group" aria-label="Profile"><button type="button" data-pf="cat" aria-pressed="true">Catenary</button><button type="button" data-pf="sph">Spherical</button></div></div>
-<div class="ctl"><span class="k">Courses</span><div class="seg" id="dPat" role="group" aria-label="Course pattern"><button type="button" data-pt="ring" aria-pressed="true">Rings</button><button type="button" data-pt="helix">Helix</button></div></div>
 <div class="ctl"><span class="k">Size · lunar</span>
-<div class="slider"><label for="dD">Diameter</label><input type="range" id="dD" min="4" max="14" step="0.5" value="8"><output id="oD"></output></div>
-<div class="slider"><label for="dRise">Rise / radius</label><input type="range" id="dRise" min="0.5" max="1.3" step="0.05" value="0.85"><output id="oRise"></output></div>
-<div class="slider"><label for="dOcu">Oculus</label><input type="range" id="dOcu" min="0" max="3" step="0.1" value="1.6"><output id="oOcu"></output></div>
+<div class="slider"><label for="shSpan">Span</label><input type="range" id="shSpan" min="4" max="14" step="0.5" value="8"><output id="oShSpan"></output></div>
+<div class="slider"><label for="shRise">Rise</label><input type="range" id="shRise" min="1" max="4" step="0.1" value="2.5"><output id="oShRise"></output></div>
+<div class="slider"><label for="shTilt">Side tilt</label><input type="range" id="shTilt" min="0" max="35" step="1" value="25"><output id="oShTilt"></output></div>
 </div>
-<div class="ctl"><span class="k">Block types</span><div class="seg" id="dStd" role="group" aria-label="Number of standard block types"><button type="button" data-sd="0">Exact · one per ring</button><button type="button" data-sd="8">8</button><button type="button" data-sd="5" aria-pressed="true">5</button><button type="button" data-sd="3">3</button></div></div>
-<div class="tog"><button type="button" id="dPortal" aria-pressed="true">Corridor portal</button><button type="button" id="dForm" aria-pressed="true">Inflatable formwork</button></div>
-<div class="stats" id="dStats"></div>
-<div class="checks" id="dChecks"></div>
-</div>
-</div>
-<div class="play" style="background:var(--surface)">
-<button type="button" id="dPlayBtn">Pause</button>
-<input type="range" id="dSeq" min="0" max="10" value="0" aria-label="Dome build step">
-<output id="oDSeq"></output>
-</div>
-<p class="note" style="margin-top:12px">Spherical profiles stop at a hemisphere (rise / radius 1.0). The catenary is the shape a hanging chain takes, turned upside down; its line of thrust stays inside a thin shell. Mass assumes 2.0 g/cm³ regolith and a 200 mm shell; radiation shielding would add loose regolith on top.</p>
-</div></section>
-
-<section class="s" id="shell"><div class="wrap">
-<div class="head">
-<div><p class="eyebrow">10 · Horizon shell blocks</p><h2>F5: a block family for the shell</h2></div>
-<p>Wall blocks tilted onto a curve leave open joints. The shell gets its own family: each F5 block is a true dome voussoir. Its head joints point at the dome axis, its beds are square to the curve, and its inner and outer faces follow the shell. The same A1 keys and I2 slot sit on the top bed, so the robot task does not change.</p>
-</div>
-<div class="bay">
-<div class="view" style="min-height:520px">
-<canvas id="sv" aria-label="3D close-up of the shell: the selected F5 block in its ring, with the rings above and below"></canvas>
-<p class="tagline" id="sTag"></p>
-<p class="hint">Drag to orbit · light block = selected type · grey = rings above and below</p>
-</div>
-<div class="panel">
-<div class="slider"><label for="sRing">Ring</label><input type="range" id="sRing" min="1" max="20" step="1" value="7"><output id="sRingO"></output></div>
-<div class="ctl"><span class="k">Block types</span><div class="seg" id="sStd" role="group" aria-label="Number of standard block types"><button type="button" data-sd="0">Exact · one per ring</button><button type="button" data-sd="8">8</button><button type="button" data-sd="5" aria-pressed="true">5</button><button type="button" data-sd="3">3</button></div></div>
-<div class="stats" id="sDims"></div>
-<p class="note">Sizes at lunar scale (block 400 × 200 × 200 mm nominal). The dome above uses the same settings.</p>
+<div class="ctl"><span class="k">Block</span><div class="seg" id="shBlk" role="group" aria-label="Block size"><button type="button" data-b="shell" aria-pressed="true">Shell · 0.35 m, 0.35 m thick</button><button type="button" data-b="report">Report · 0.141 m, 0.10 m thick</button></div></div>
+<div class="stats" id="shStats"></div>
+<div class="checks" id="shChecks"></div>
 </div>
 </div>
-<div class="rule" style="margin-top:56px">
-<div><p class="eyebrow">Fewer types, wider joints</p><h3>Every ring wants its own block</h3></div>
-<div><p>The radius shrinks ring by ring, so an exact shell needs one block type per ring: about twenty moulds for an 8 m dome. Grouping rings into bands cuts that to a handful of types, but each band’s block is then slightly wrong for the rings at its edges, and the error shows up as open head joints. The program rules say a block is re-seated, never shimmed, so the joint error decides how far we can standardise. The dome panel shows the largest error for the current choice: even eight types leave about 9 mm.</p>
-<p>Two ways out. Add one closer block per ring, cut to the leftover length, so every other joint stays tight. Or print every ring exact: for an on-site printer a new type costs no mould, only one more entry for the twin and the gripper to recognise.</p></div>
+<div class="play" style="background:var(--surface)"><button type="button" id="shPlay">Pause</button><input type="range" id="shSeq" min="0" max="10" value="0" aria-label="Shell build step"><output id="shOut"></output></div>
+<p class="note" style="margin-top:8px;margin-bottom:28px">A quick explorer, not the Grasshopper definition: the flat hexagonal pattern is laid on the sphere with an equal-area mapping, so block counts differ a little from the definition below (265 at 8 m × 2.5 m). Rise is capped at a hemisphere. Mass at 2,300 kg/m³.</p>
+<div class="figs">
+<figure><img src="shell_rhino.jpg" alt="Rhino, four views of the Horizon shell: plan, perspective, front and side, a spherical cap of tilted hexagonal blocks with a darker rim ring at the base"><figcaption>Rhino · the shell in plan, perspective, front and side; darker blocks = rim ring</figcaption></figure>
+<figure><img src="shell_isaac.jpg" alt="Isaac Sim: the Horizon shell standing on the ground under lunar gravity, white shell blocks above a beige rim ring"><figcaption>Isaac Sim · the shell loaded into the lunar scene; first test runs to follow</figcaption></figure>
 </div>
-<div class="tw"><table id="famT"><thead><tr><th>Type</th><th>Rings</th><th>Count</th><th>Length out / in (mm)</th><th>Height out / in (mm)</th><th>Plan taper</th><th>Elev. taper</th><th>Bed angle</th><th>Mass · lunar</th></tr></thead><tbody></tbody></table></div>
-<div class="vbar" style="margin-top:12px"><button type="button" class="filebtn" id="csvBtn" style="font:500 13px var(--body);padding:8px 12px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer">Copy family as CSV</button><span class="note">Paste into Grasshopper (Panel → Read CSV) to rebuild the family. Lunar mm and degrees.</span></div>
-<textarea id="csvOut" hidden readonly rows="6" style="width:100%;font:12px var(--mono);background:var(--bg);color:var(--ink);border:1px solid var(--line);margin-top:8px"></textarea>
-<h3 class="sub">Four F5 specials</h3>
-<div class="strat">
-<div><span class="fk">F5-B · Base ring</span><h3>Starts the shell level</h3><p>The catenary meets the ground at an angle, so the first bed is sloped. The base block has a flat underside on the pad border and a top bed at the angle of ring 2.</p></div>
-<div><span class="fk">F5-O · Oculus ring</span><h3>Closes the crown</h3><p>The last ring works as a compression ring around the opening. Its top is levelled flat to seat a skylight, a hatch or a radiator plug-in.</p></div>
-<div><span class="fk">F5-J · Portal jambs</span><h3>Frames the corridor door</h3><p>Blocks beside the opening are cut to a vertical jamb face, and an F2 arch ring over the door carries the rings above. The maglev corridor docks against this frame.</p></div>
-<div><span class="fk">F5-H · Helix starter</span><h3>Turns rings into a spiral</h3><p>For the helical option, one starter ring whose top bed climbs one block height in one turn. After it, every block sits on the one before and the robot never has to close a ring.</p></div>
+<div style="margin-top:20px">
+<figure style="margin:0 0 20px; max-width:860px"><img src="shell_gh.jpg" alt="Grasshopper: sliders hex_r 0.350, thick 0.350, span 8, rise 2.5, tilt 25, density 2300 and mapping 1 feeding a Python component with outputs shell, rim and info; the info panel reads span 8.0 m, rise 2.5 m, sphere radius 4.45 m, 265 blocks (shell 211, rim 54), build failures 0" style="width:100%; display:block"><figcaption class="note" style="margin-top:8px">Grasshopper · one Python component: seven sliders in, shell and rim blocks out, with a live info panel</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Horizon shell · current definition</th><th>Value</th><th>Grasshopper input</th></tr></thead><tbody>
+<tr><td>Shell</td><td>Span 8.0 m · rise 2.5 m · sphere radius 4.45 m</td><td>span 8 · rise 2.5</td></tr>
+<tr><td>Blocks</td><td>265: 211 shell, 54 rim · 0 build failures</td><td></td></tr>
+<tr><td>Block</td><td>Hexagon radius 0.35 m · 0.35 m thick · 25° side tilt</td><td>hex_r 0.350 · thick 0.350 · tilt 25</td></tr>
+<tr><td>Mapping</td><td>Option 1</td><td>mapping 1</td></tr>
+<tr><td>Floor</td><td>About 50 m² inside · shell surface about 70 m²</td><td></td></tr>
+<tr><td>One block</td><td>About 250 kg</td><td>density 2,300 kg/m³</td></tr>
+<tr><td>Shell mass</td><td>About 66 t</td><td></td></tr>
+</tbody></table></div>
 </div>
+<p class="note" style="margin-top:8px">Floor area, block and shell mass are computed here from the definition's inputs (the same block geometry as section 02), not read from the Grasshopper panel.</p>
+<div class="verdict2" style="margin-top:20px"><div><p class="eyebrow">Open question</p><h3>Which block size for the shell?</h3></div>
+<div><p>At 0.35 m radius and 0.35 m thick, each shell block weighs about 250 kg: twenty times the 12 kg report block that one MoonBot limb can carry. The same 8 m shell in report blocks (0.141 m radius, 0.10 m thick) would take about 1,350 of them, but a shell that thin has not been tested.</p>
+<p>The next Isaac Sim runs settle it: the shell under lunar gravity and moonquakes, built ring by ring without support, at both block sizes.</p></div></div>
 </div></section>
 
 <section class="s" id="checks"><div class="wrap">
 <div class="head">
-<div><p class="eyebrow">11 · Quick checks</p><h2>What the Moon changes, and what it doesn't</h2></div>
+<div><p class="eyebrow">10 · Quick checks</p><h2>What the Moon changes, and what it doesn't</h2></div>
 <p>A dry-stacked structure under its own weight stands or falls on geometry. Lower gravity scales every force down together, so the safety of the shape is the same on the Moon. What does not scale down is the push of the robot itself.</p>
 </div>
 <div class="calc">
@@ -1091,7 +1070,7 @@ for q in range(-R, R + 1):
 
 <section class="s" id="next"><div class="wrap">
 <div class="head">
-<div><p class="eyebrow">12 · Next steps</p><h2>From first tests to a planned build</h2></div>
+<div><p class="eyebrow">11 · Next steps</p><h2>From first tests to a planned build</h2></div>
 <p>What Report 02 leaves open, in the order it unlocks the rest: the site first, then the block, then the structures, then robots and the model that coordinates them.</p>
 </div>
 <div class="ask">
@@ -1100,7 +1079,7 @@ for q in range(-R, R + 1):
 <div><span class="qn">3</span><b>Test block density and weight</b><p>The 2,300 kg/m³ solid block is an assumption and looks overdesigned: wall blocks come out at 72 to 77 kg against 12 kg for the pavement block. Test printed, sintered and laser-formed regolith for real density, porosity and strength, and size the blocks to what a robot can carry.</p></div>
 <div><span class="qn">4</span><b>Measure friction and contact</b><p>Friction 0.7 / 0.6 is assumed in every Isaac Sim run. Tilt tests on printed samples give the real values to feed back into the simulation.</p></div>
 <div><span class="qn">5</span><b>Fix and re-run the structural tests</b><p>Tune the physics settings and run Column A across the full K range, re-run Wall A at its current 19.9° definition, add end columns or anchors to the wall, and compare K with Apollo seismic records.</p></div>
-<div><span class="qn">6</span><b>Develop the shell in hexagonal blocks</b><p>Bring the dome and its F5 family onto the same hexagonal tilted block as the pavement, wall and column, so the whole outpost uses one family.</p></div>
+<div><span class="qn">6</span><b>Test the Horizon shell</b><p>Run the shell in Isaac Sim under lunar gravity and moonquakes, build it ring by ring without support, ground its rim ring in the pavement, and settle the block size: about 250 kg in the current definition against 12 kg for the report block.</p></div>
 <div><span class="qn">7</span><b>Build the structures</b><p>Print blocks at lab scale, assemble a wall, a column and a pad section by hand, then by robot, and compare each step with the simulation.</p></div>
 <div><span class="qn">8</span><b>Moon environment in Isaac Sim</b><p>Terrain from the site elevation model, low sun angles and long shadows, a regolith ground model instead of a rigid plane, and dust particles.</p></div>
 <div><span class="qn">9</span><b>Robots and the robot–structure interface</b><p>Add the two pavers and the maintainer to the scene: top versus side grip on the blocks, placement accuracy, approach paths, and the forces a robot puts into a half-built structure.</p></div>
@@ -1593,197 +1572,6 @@ var SEL={id:'dg2'};
 })();
 
 var B={cyc:4}; // robot cycle, minutes per block pick (was set in the removed builder)
-/* ---------- Horizon dome + F5 shell block family ---------- */
-var D={prof:'cat',D:8,rise:0.85,ocu:1.6,pat:'ring',portal:true,form:true,std:5,count:0,playing:!RM,res:null,sel:6};
-function domeProfile(Rl,h,prof){ // lab mm: meridian points from base (r=R,y=0) to apex, centreline of the shell
-  var pts=[], N=240, i;
-  if(prof==='sph'){ h=Math.min(h,Rl); var rho=(Rl*Rl+h*h)/(2*h), yc=h-rho, a0=Math.atan2(-yc,Rl);
-    for(i=0;i<=N;i++){ var a=a0+(Math.PI/2-a0)*i/N; pts.push([rho*Math.cos(a),yc+rho*Math.sin(a)]); } }
-  else { var lo=Rl*0.05, hi=Rl*50; for(var k=0;k<80;k++){ var mid=(lo+hi)/2; if(mid*(Math.cosh(Rl/mid)-1)>h) lo=mid; else hi=mid; } var c=(lo+hi)/2;
-    for(i=0;i<=N;i++){ var r=Rl*(1-i/N); pts.push([r,c*(Math.cosh(Rl/c)-Math.cosh(r/c))]); } }
-  var s=[0]; for(i=1;i<pts.length;i++) s.push(s[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));
-  return {pts:pts,s:s,len:s[s.length-1]}; }
-function profAt(P,s){ var i=1; while(i<P.s.length-1&&P.s[i]<s) i++; var t=(s-P.s[i-1])/((P.s[i]-P.s[i-1])||1), a=P.pts[i-1], b=P.pts[i];
-  var r=a[0]+(b[0]-a[0])*t, y=a[1]+(b[1]-a[1])*t, th=Math.atan2(b[1]-a[1],a[0]-b[0]); return {r:r,y:y,th:th}; }
-function lerpCol(t){ var a=[0xC9,0x49,0x2F], b=[0x9E,0x8F,0x7E]; return (Math.round(a[0]+(b[0]-a[0])*t)<<16)|(Math.round(a[1]+(b[1]-a[1])*t)<<8)|Math.round(a[2]+(b[2]-a[2])*t); }
-
-/* F5 block: a true dome voussoir. Head joints radial (plan taper), beds normal to the meridian (elevation taper),
-   inner and outer faces offset ±W/2 from the centreline. Built in a canonical frame: origin at the bottom bed centre,
-   y along the meridian, z outward, x along the ring. */
-function shellCorners(def){
-  var P=def.P, a=profAt(P,def.s0), b=profAt(P,def.s0+H), out=[];
-  [[a,0],[b,1]].forEach(function(q){ var c=q[0], ny=Math.cos(c.th), nu=Math.sin(c.th);
-    [-1,1].forEach(function(side){ var u=c.r+side*nu*W/2, y=c.y+side*ny*W/2; out.push({u:u,y:y,top:q[1],side:side}); }); });
-  if(def.base){ out.forEach(function(p){ if(!p.top) p.y=0; }); }
-  if(def.ocu){ var ty=Math.max.apply(null,out.filter(function(p){return p.top;}).map(function(p){return p.y;})); out.forEach(function(p){ if(p.top) p.y=ty; }); }
-  return {pts:out,a:a,b:b}; }
-function shellDims(def){ var c=shellCorners(def), p=c.pts, bt=def.beta, sb=Math.sin(bt);
-  function g(top,side){ return p.filter(function(q){return q.top===top&&q.side===side;})[0]; }
-  var ob=g(0,1), ib=g(0,-1), ot=g(1,1), it_=g(1,-1);
-  return {outB:2*ob.u*sb, inB:2*ib.u*sb, outT:2*ot.u*sb, inT:2*it_.u*sb, hOut:Math.hypot(ot.u-ob.u,ot.y-ob.y), hIn:Math.hypot(it_.u-ib.u,it_.y-ib.y),
-    plan:bt*180/Math.PI, elev:(c.a.th-c.b.th)*180/Math.PI, bed:def.base?0:90-c.a.th*180/Math.PI, top:def.ocu?0:90-c.b.th*180/Math.PI}; }
-function makeShellBlock(def,color){
-  var S=S_MM, g=new THREE.Group(), c=shellCorners(def), a=c.a, bt=def.beta;
-  var ang=Math.PI/2-a.th, ca=Math.cos(ang), sa=Math.sin(ang);
-  function loc(x,y,z){ var Y=y-a.y, Z=z-a.r; return new THREE.Vector3(x*S,(Y*ca-Z*sa)*S,(Y*sa+Z*ca)*S); } // Rx(pi/2 - th)
-  var V=[]; c.pts.forEach(function(p){ [-bt,bt].forEach(function(ps){ V.push(loc(p.u*Math.sin(ps),p.y,p.u*Math.cos(ps))); }); });
-  var body=new THREE.MeshStandardMaterial({color:new THREE.Color(color).convertSRGBToLinear(),envMapIntensity:0.3,roughness:0.62});
-  var dark=new THREE.MeshStandardMaterial({color:0x07080b,roughness:1,side:THREE.DoubleSide});
-  var hull=new THREE.ConvexGeometry(V); g.add(new THREE.Mesh(hull,body));
-  if(!def.ocu){ // shear keys and I2 slot on the top bed
-    var tv=[]; for(var i=0;i<V.length;i++) if(c.pts[i>>1].top) tv.push(V[i]);
-    var ct=new THREE.Vector3(); tv.forEach(function(v){ct.add(v);}); ct.multiplyScalar(1/tv.length);
-    var e1=tv[1].clone().sub(tv[0]), e2=tv[2].clone().sub(tv[0]), nt=e1.clone().cross(e2).normalize(); if(nt.y<0) nt.negate();
-    var qn=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),nt), Lc=2*a.r*Math.sin(bt);
-    [-1,1].forEach(function(sg){ var kg=new THREE.BoxGeometry(L*0.2*S,H*0.06*S,W*0.6*S); var m=new THREE.Mesh(kg,body); m.quaternion.copy(qn);
-      m.position.copy(ct).add(new THREE.Vector3(sg*Lc/4*S,0,0)).addScaledVector(nt,H*0.03*S); g.add(m); });
-    var sl=new THREE.Mesh(new THREE.PlaneGeometry(16*S,45*S),dark); sl.quaternion.copy(qn).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),-Math.PI/2));
-    sl.position.copy(ct).addScaledVector(nt,0.9*S); g.add(sl); }
-  g.traverse(function(m){ if(m.isMesh){ m.castShadow=true; m.receiveShadow=true; } });
-  return g; }
-var VOLC={};
-function shellVol(T){ if(VOLC[T.key]) return VOLC[T.key]; var v; // cm^3 lab
-  if(ok) v=meshVolumeOf(THREE,makeShellBlock(T.def,0x888888)); else { var d=shellDims(T.def); v=(d.outB+d.inB)/2*(d.hOut+d.hIn)/2*W/1000; }
-  return (VOLC[T.key]=v); }
-
-function genDome(){
-  var Rl=D.D*250, h=D.rise*Rl, P=domeProfile(Rl,h,D.prof), ocR=D.ocu*250, rings=[], fr=Math.atan(0.6)*180/Math.PI;
-  for(var k=0;;k++){ var s=k*H; if(s+H>P.len) break; var q=profAt(P,s+H/2); if(q.r-L/2<ocR) break; var c=profAt(P,s); rings.push({k:k,s:s,r:c.r,y:c.y,th:c.th}); }
-  var R=rings.length, Nb=D.std===0?R:Math.min(D.std,Math.max(1,R-2)), types=[], tmap={};
-  function design(rg,id,name,extra,col){ var n=Math.max(6,Math.round(2*Math.PI*rg.r/L)), bt=Math.PI/n, def={P:P,s0:rg.s,beta:bt};
-    for(var x in extra) def[x]=extra[x];
-    var T={id:id,name:name,key:[D.prof,D.D,D.rise,id,rg.s.toFixed(1)].join('|'),def:def,Lc:2*Math.PI*rg.r/n,ring:rg.k,rings:[],count:0,color:col,special:!!extra.base||!!extra.ocu};
-    types.push(T); tmap[id]=T; return T; }
-  var tBase=design(rings[0],'B','F5-B base',{base:true},0xA8442C), tOcu=R>1?design(rings[R-1],'O','F5-O oculus ring',{ocu:true},0x8f8c86):null;
-  var mid=rings.slice(1,R-1), bands=[];
-  if(D.std===0) mid.forEach(function(rg,i){ bands.push([rg]); });
-  else { for(var b=0;b<Nb;b++) bands.push([]); mid.forEach(function(rg,i){ bands[Math.min(Nb-1,Math.floor(i*Nb/mid.length))].push(rg); }); }
-  var nb=bands.filter(function(x){return x.length;}).length, bi=0;
-  bands.forEach(function(bd){ if(!bd.length) return; var T=design(bd[Math.floor(bd.length/2)],'S'+(bi+1),'F5-'+(bi+1),{},lerpCol(nb>1?bi/(nb-1):0)); bd.forEach(function(rg){ rg.T=T; }); bi++; });
-  rings[0].T=tBase; if(tOcu) rings[R-1].T=tOcu;
-  var out=[], gapMax=0, bedErr=0, steep=0, pw=900, ph=Math.min(h*0.5,1100);
-  function skip(phi,r,y){ if(!D.portal) return false; var d=Math.atan2(Math.sin(phi),Math.cos(phi)); return Math.abs(d)*r<pw/2 && y<ph; }
-  function dTh(s){ return profAt(P,s).th-profAt(P,s+H).th; }
-  if(D.pat==='ring'){
-    rings.forEach(function(rg){ var T=rg.T, n=Math.max(6,Math.round(2*Math.PI*rg.r/T.Lc)), st=2*Math.PI/n;
-      var gap=(2*Math.PI*rg.r-n*T.Lc)/n, mis=st-2*T.def.beta, err=Math.abs(gap)+W/2*Math.abs(mis); rg.n=n; rg.err=err*2;
-      gapMax=Math.max(gapMax,err*2); bedErr=Math.max(bedErr,W*Math.abs(dTh(rg.s)-dTh(T.def.s0))*2);
-      if(90-rg.th*180/Math.PI>fr) steep++;
-      var off=(rg.k%2)*st/2;
-      for(var i=0;i<n;i++){ var ph_=off+i*st; if(skip(ph_,rg.r,rg.y)) continue; T.count++;
-        out.push({k:T.id,p:[rg.r*Math.sin(ph_),rg.y,rg.r*Math.cos(ph_)],rx:rg.th-Math.PI/2,ry:ph_,rz:0,a:[0,1,0],course:rg.k}); }
-      T.rings.push(rg.k+1); });
-  } else { // helix: one continuous course climbing one block height per turn
-    var phi=0, guard=0;
-    while(guard++<30000){ var s2=H*phi/(2*Math.PI); var k2=Math.min(R-1,Math.floor(s2/H)); if(s2+H>P.len||k2>=R-1&&s2>rings[R-1].s) break;
-      var c2=profAt(P,s2); if(c2.r-L/2<ocR) break; var T2=rings[k2].T, dphi=T2.Lc/c2.r;
-      if(!skip(phi+dphi/2,c2.r,c2.y)){ T2.count++; out.push({k:T2.id,p:[c2.r*Math.sin(phi+dphi/2),c2.y,c2.r*Math.cos(phi+dphi/2)],rx:c2.th-Math.PI/2,ry:phi+dphi/2,rz:0,a:[0,1,0],course:k2}); }
-      phi+=dphi; }
-    rings.forEach(function(rg){ rg.n=Math.round(2*Math.PI*rg.r/rg.T.Lc); rg.err=0; if(rg.T.rings.indexOf(rg.k+1)<0) rg.T.rings.push(rg.k+1); });
-    steep=-1; }
-  types=types.filter(function(T){return T.count>0;});
-  return {items:out,P:P,Rl:Rl,h:h,courses:R,rings:rings,types:types,tmap:tmap,gapMax:gapMax,bedErr:bedErr,steep:steep,ocR:ocR}; }
-
-(function(){
-  var seg=function(id,attr,fn){ var el=$(id); if(!el) return; el.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; pressedSel(this,b,attr); fn(b.dataset[attr.replace('data-','')]); }); };
-  seg('dProf','data-pf',function(v){ D.prof=v; build(); }); seg('dPat','data-pt',function(v){ D.pat=v; build(); });
-  function setStd(v){ D.std=+v; ['dStd','sStd'].forEach(function(id){ [].forEach.call($(id).querySelectorAll('button'),function(b){ b.setAttribute('aria-pressed',b.dataset.sd===String(v)?'true':'false'); }); }); build(true); }
-  seg('dStd','data-sd',setStd); seg('sStd','data-sd',setStd);
-  [['dD','D'],['dRise','rise'],['dOcu','ocu']].forEach(function(s){ $(s[0]).addEventListener('input',function(){ D[s[1]]=+this.value; out(); build(true); }); });
-  $('dPortal').addEventListener('click',function(){ D.portal=!D.portal; this.setAttribute('aria-pressed',D.portal); build(true); });
-  $('dForm').addEventListener('click',function(){ D.form=!D.form; this.setAttribute('aria-pressed',D.form); if(form) form.visible=D.form; });
-  $('sRing').addEventListener('input',function(){ D.sel=+this.value-1; explore(); });
-  function out(){ $('oD').textContent=fmt(D.D,1)+' m'; $('oRise').textContent=fmt(D.rise,2); $('oOcu').textContent=fmt(D.ocu,1)+' m'; }
-  out();
-  var dv=ok?new Viewer($('dv'),{fov:34}):null, sv=ok?new Viewer($('sv'),{fov:30}):null, meshes=[], hot=null, form=null, list=[], perKey={}, hotC={}, tpls={};
-  if(dv) views.push(dv); if(sv) views.push(sv);
-  function tplOf(T){ return tpls[T.key]||(tpls[T.key]=makeShellBlock(T.def,T.color)); }
-  function build(keep){
-    D.res=genDome(); list=D.res.items; perKey={};
-    list.forEach(function(it_,i){ (perKey[it_.k]=perKey[it_.k]||[]).push(i); });
-    stats(); explore();
-    if(!dv) return;
-    while(dv.root.children.length) dv.root.remove(dv.root.children[0]); meshes=[]; hot=null; hotC={};
-    var S=S_MM, q=new THREE.Quaternion(), e=new THREE.Euler(), pos=new THREE.Vector3(), one=new THREE.Vector3(1,1,1), col=new THREE.Color();
-    Object.keys(perKey).forEach(function(id){ var T=D.res.tmap[id], idx=perKey[id], g=tplOf(T);
-      var mats=idx.map(function(i){ var t=list[i]; e.set(t.rx,t.ry,t.rz,'YXZ'); q.setFromEuler(e); pos.set(t.p[0]*S,t.p[1]*S,t.p[2]*S); return new THREE.Matrix4().compose(pos,q,one); });
-      g.children.forEach(function(ch){ if(!ch.isMesh) return; var mm=new THREE.Matrix4().compose(ch.position,ch.quaternion,ch.scale);
-        var im=new THREE.InstancedMesh(ch.geometry,ch.material,idx.length); im.castShadow=true; im.receiveShadow=true;
-        idx.forEach(function(i,j){ im.setMatrixAt(j,mats[j].clone().multiply(mm)); if(ch.material.color.getHex()!==0x07080b){ col.setScalar(0.9+0.2*((i*7919)%97)/97); im.setColorAt(j,col); } });
-        im.instanceMatrix.needsUpdate=true; if(im.instanceColor) im.instanceColor.needsUpdate=true; im.userData.idx=idx; dv.root.add(im); meshes.push(im); });
-    });
-    var P=D.res.P, lp=[]; for(var i=0;i<P.pts.length;i+=4){ var t=P.pts[i]; lp.push(new THREE.Vector2(Math.max(0,(t[0]-W*0.62))*S,Math.max(0,t[1]-W*0.2)*S)); }
-    lp.push(new THREE.Vector2(0,lp[lp.length-1].y)); lp.unshift(new THREE.Vector2(0,0));
-    form=new THREE.Mesh(new THREE.LatheGeometry(lp,72),new THREE.MeshStandardMaterial({color:new THREE.Color(0x7C9CF2).convertSRGBToLinear(),transparent:true,opacity:0.22,roughness:0.35,depthWrite:false,side:THREE.DoubleSide}));
-    form.visible=D.form; dv.root.add(form);
-    var Rl=D.res.Rl*S, hh=D.res.h*S; dv.target.set(0,hh*0.4,0); dv.dist=Math.max(Rl*2,hh*1.6)*1.7+2;
-    var sun=dv.sun; sun.position.set(Rl*2.2,Math.max(hh,Rl)*1.1,Rl*1.2); sun.target.position.set(0,0,0); var sc=sun.shadow.camera, ee=Rl*1.5; sc.left=-ee; sc.right=ee; sc.top=ee; sc.bottom=-ee; sc.far=Rl*8+hh*4; sc.updateProjectionMatrix();
-    if(!keep) dv.frame(new THREE.Vector3(0.95,0.55,0.75));
-    D.count=keep?list.length:0; if(!keep&&!RM) setPlay(true); show(D.count,1);
-  }
-  function show(n,d){ var N=list.length; n=Math.max(0,Math.min(N,n)); var act=Math.ceil(n)-1; if(d>=1) act=Math.round(n)-1;
-    var lim=d>=1?act+1:act;
-    meshes.forEach(function(im){ var idx=im.userData.idx, c=0; while(c<idx.length&&idx[c]<lim) c++; im.count=c; });
-    if(dv){ if(hot){ dv.root.remove(hot); hot=null; }
-      if(d<1&&act>=0){ var t=list[act], T=D.res.tmap[t.k]; hot=hotC[t.k]||(hotC[t.k]=makeShellBlock(T.def,HOT));
-        var off=(1-(1-Math.pow(1-d,3)))*1.4; hot.position.set(t.p[0]*S_MM,t.p[1]*S_MM+off,t.p[2]*S_MM); hot.rotation.set(t.rx,t.ry,t.rz,'YXZ'); dv.root.add(hot); } }
-    $('dSeq').max=N; $('dSeq').value=Math.ceil(n); var cur=list[Math.max(0,Math.ceil(n)-1)];
-    $('oDSeq').textContent='Pick '+Math.ceil(n)+' / '+N+(cur?' · ring '+(cur.course+1)+' · '+D.res.tmap[cur.k].name:''); }
-  var dPlay=$('dPlayBtn'), pt=0, hold=0;
-  function setPlay(v){ D.playing=v; dPlay.textContent=v?'Pause':'Play'; }
-  dPlay.addEventListener('click',function(){ if(!D.playing&&D.count>=list.length){ D.count=0; pt=0; } setPlay(!D.playing); });
-  $('dSeq').addEventListener('input',function(){ setPlay(false); D.count=+this.value; pt=D.count; show(D.count,1); });
-  views.dTick=function(dt){ if(!D.playing||!dv||!dv.visible) return; var N=list.length; pt=D.count;
-    if(pt>=N){ hold+=dt; if(hold>2){ hold=0; D.count=0; } return; }
-    var per=Math.max(0.006,Math.min(0.3,14/N)); pt=Math.min(N,pt+dt/per); D.count=pt; var n=Math.floor(pt), f=pt-n;
-    if(per<0.05) show(pt,1); else if(pt>=N) show(N,1); else show(n+1,f); };
-  function stats(){ var r=D.res, N=r.items.length, tot=0, maxM=0;
-    r.types.forEach(function(T){ var m=shellVol(T)*8*RHO_REG/1000; T.mL=m; T.mP=shellVol(T)*RHO_PLA/1000; tot+=m*T.count; maxM=Math.max(maxM,m); });
-    var hm=(r.h+H/2)*2/1000, area=Math.PI*Math.pow((r.Rl*2-200)/1000,2), hrs=N*B.cyc/60, types=r.types.length, tol=3;
-    $('dStats').innerHTML='<div><b>'+fmt(N,0)+'</b><span>Blocks = robot picks</span></div><div><b>'+r.courses+'</b><span>'+(D.pat==='ring'?'Rings':'Turns of the helix')+'</span></div><div><b>'+types+'</b><span>Block types</span></div>'+
-      '<div><b>'+fmt(hm,1)+'<small>m</small></b><span>Height · lunar</span></div><div><b>'+fmt(area,0)+'<small>m²</small></b><span>Floor inside · lunar</span></div><div><b>'+fmt(tot/1000,1)+'<small>t</small></b><span>Shell mass · regolith</span></div>';
-    var fr=Math.atan(0.6)*180/Math.PI, ch='';
-    if(D.pat==='ring') ch+='<div><span>Each ring closes into a compression ring, so no centering is needed</span><span class="chip ok">Self-supporting</span></div>'+
-      '<div><span>'+(r.steep>0?r.steep+' of '+r.courses+' rings have a bed steeper than '+fmt(fr,0)+'°: keys or a held block until the ring closes':'All beds flatter than '+fmt(fr,0)+'°: blocks stay put by friction')+'</span><span class="chip '+(r.steep>0?'q':'ok')+'">'+(r.steep>0?'Hold to close':'Friction holds')+'</span></div>'+
-      '<div><span>Largest head-joint error from standard blocks: '+fmt(r.gapMax,1)+' mm (target ≤ '+tol+' mm, assumed)</span><span class="chip '+(r.gapMax<=tol?'ok':'over')+'">'+(r.gapMax<=tol?'Within':'Too open')+'</span></div>';
-    else ch+='<div><span>One continuous course: no ring has to close, the robot never stops climbing</span><span class="chip ok">Continuous</span></div><div><span>Needs a tapered starter ring at the base (F5-H)</span><span class="chip new">New special</span></div>';
-    if(D.portal) ch+='<div><span>Portal for the corridor: jamb blocks and an arch ring (F5-J, not modelled)</span><span class="chip new">Arch ring</span></div>';
-    ch+='<div><span>Robot time at '+fmt(B.cyc,1)+' min / pick · one robot</span><span class="chip q">'+fmt(hrs,0)+' h</span></div>';
-    $('dChecks').innerHTML=ch;
-    $('dTag').textContent=(D.prof==='cat'?'Catenary':'Spherical')+' dome · Ø '+fmt(D.D,1)+' m lunar · '+(D.pat==='ring'?'ring courses':'helical course')+' · '+types+' block types';
-    // family table + csv
-    var rows='', csv='type,rings,count,s0_mm,beta_deg,outer_bottom_mm,inner_bottom_mm,outer_top_mm,inner_top_mm,height_outer_mm,height_inner_mm,thickness_mm,plan_taper_deg,elev_taper_deg,bed_angle_deg,mass_lunar_kg,mass_pla_kg\n';
-    r.types.forEach(function(T){ var d=shellDims(T.def), rg=T.rings.length>1?T.rings[0]+'–'+T.rings[T.rings.length-1]:String(T.rings[0]);
-      rows+='<tr><td><i style="display:inline-block;width:10px;height:10px;background:#'+('00000'+T.color.toString(16)).slice(-6)+';margin-right:8px"></i>'+T.name+'</td><td>'+rg+'</td><td>'+T.count+'</td><td>'+fmt(d.outB*2,0)+' / '+fmt(d.inB*2,0)+'</td><td>'+fmt(d.hOut*2,0)+' / '+fmt(d.hIn*2,0)+'</td><td>'+fmt(d.plan,2)+'°</td><td>'+fmt(d.elev,2)+'°</td><td>'+fmt(d.bed,1)+'°</td><td>'+fmt(T.mL,1)+' kg</td></tr>';
-      csv+=[T.name,'"'+rg+'"',T.count,(T.def.s0*2).toFixed(1),(T.def.beta*180/Math.PI).toFixed(4),(d.outB*2).toFixed(1),(d.inB*2).toFixed(1),(d.outT*2).toFixed(1),(d.inT*2).toFixed(1),(d.hOut*2).toFixed(1),(d.hIn*2).toFixed(1),W*2,d.plan.toFixed(3),d.elev.toFixed(3),d.bed.toFixed(2),T.mL.toFixed(2),T.mP.toFixed(3)].join(',')+'\n'; });
-    document.querySelector('#famT tbody').innerHTML=rows; $('csvOut').value=csv;
-    $('sRing').max=r.courses; if(D.sel>r.courses-1) D.sel=r.courses-1; $('sRing').value=D.sel+1;
-  }
-  $('csvBtn').addEventListener('click',function(){ var t=$('csvOut'), btn=this;
-    function done(){ btn.textContent='Copied'; setTimeout(function(){btn.textContent='Copy family as CSV';},1600); }
-    try{ navigator.clipboard.writeText(t.value).then(done,function(){ t.hidden=false; t.select(); }); }catch(e){ t.hidden=false; t.select(); } });
-  function explore(){ if(!D.res) return; var r=D.res, k=Math.max(0,Math.min(r.courses-1,D.sel)), rg=r.rings[k], T=rg.T, d=shellDims(T.def), mL=shellVol(T)*8*RHO_REG/1000, mP=shellVol(T)*RHO_PLA/1000;
-    $('sRingO').textContent=(k+1)+' / '+r.courses;
-    $('sTag').textContent='Ring '+(k+1)+' · '+T.name+(T.special?' (special)':'')+' · '+(rg.n||'–')+' blocks in the ring';
-    $('sDims').innerHTML='<div><b>'+fmt(d.outB*2,0)+' / '+fmt(d.inB*2,0)+'<small>mm</small></b><span>Length outer / inner face · bottom</span></div><div><b>'+fmt(d.hOut*2,0)+' / '+fmt(d.hIn*2,0)+'<small>mm</small></b><span>Height outer / inner face</span></div><div><b>'+fmt(W*2,0)+'<small>mm</small></b><span>Shell thickness</span></div>'+
-      '<div><b>'+fmt(d.plan,2)+'<small>°</small></b><span>Plan taper per head joint</span></div><div><b>'+fmt(d.elev,2)+'<small>°</small></b><span>Elevation taper between beds</span></div><div><b>'+fmt(d.bed,1)+'<small>°</small></b><span>Bed angle from horizontal</span></div>'+
-      '<div><b>'+fmt(mL,1)+'<small>kg</small></b><span>Mass · lunar regolith</span></div><div><b>'+fmt(mP,2)+'<small>kg</small></b><span>Lab print · PLA 25 %</span></div><div><b>'+(D.pat==='ring'?fmt(rg.err||0,1):'–')+'<small>mm</small></b><span>Head-joint error in this ring</span></div>';
-    if(!sv) return;
-    while(sv.root.children.length) sv.root.remove(sv.root.children[0]);
-    var S=S_MM, ctr=new THREE.Vector3(), cnt=0;
-    [k-1,k,k+1].forEach(function(kk){ if(kk<0||kk>=r.courses) return; var R2=r.rings[kk], T2=R2.T, n=R2.n||Math.round(2*Math.PI*R2.r/T2.Lc), st=2*Math.PI/n, off=(kk%2)*st/2;
-      var g0=kk===k?tplOf(T2):makeShellBlock(T2.def,0x4a505c);
-      for(var i=-3;i<=3;i++){ var ph=off+i*st; if(Math.abs(ph)>2.6*st) continue; var o=g0.clone(); o.position.set(R2.r*Math.sin(ph)*S,R2.y*S,R2.r*Math.cos(ph)*S); o.rotation.set(R2.th-Math.PI/2,ph,0,'YXZ');
-        if(kk===k&&Math.abs(ph)<st*0.6){ o=makeShellBlock(T2.def,HOT); o.position.set(R2.r*Math.sin(ph)*S,R2.y*S,R2.r*Math.cos(ph)*S); o.rotation.set(R2.th-Math.PI/2,ph,0,'YXZ'); }
-        sv.root.add(o); if(kk===k){ ctr.add(o.position); cnt++; } } });
-    ctr.multiplyScalar(1/Math.max(1,cnt)); var n3=new THREE.Vector3(0,Math.cos(rg.th),Math.sin(rg.th));
-    sv.target.copy(ctr).addScaledVector(n3,0).add(new THREE.Vector3(0,H*S*0.5,0)); sv.dist=19;
-    var sun=sv.sun; sun.position.copy(ctr).add(new THREE.Vector3(6,8,9)); sun.target.position.copy(ctr); var sc=sun.shadow.camera; sc.left=-8; sc.right=8; sc.top=8; sc.bottom=-8; sc.far=60; sc.updateProjectionMatrix();
-    sv.frame(n3.clone().add(new THREE.Vector3(0.35,0.25,0)));
-  }
-  build(false);
-})();
-
 /* ---------- Part A: graded pad. One block family set by the tilt of its side faces:
    0° = hexagonal prism (core), 35.3° = the tilted cube (edge). All sizes in lunar mm (full size). ---------- */
 var GA=200, GS=GA/Math.SQRT2, GAP=GS*Math.sqrt(3)/2, GD=2*GAP, TMAX=Math.asin(1/Math.sqrt(3))*180/Math.PI; // cube edge, hex side, apothem, spacing, cube face tilt
@@ -1928,6 +1716,107 @@ GradedView.prototype.tick=function(dt){
   h+='<div class="lim"></div>'+K.map(function(k,i){ return '<div class="lim">'+(i===1?'— predicted limit 0.19 lies here → ':'')+'</div>'; }).join('');
   el.innerHTML=h; })();
 
+/* ---------- Horizon shell: the hexagonal tilt block mapped onto a spherical cap ----------
+   Same block as section 02 (Grasshopper method): hexagon radius R, thickness T, six side faces tilted
+   alternately about mid-height, corners closed by two flat triangles. The flat hexagonal pattern is laid
+   onto the cap with an equal-area mapping, every block normal to the sphere. Built from the rim up. */
+(function(){
+  var cv=$('shv'); if(!cv) return;
+  var SH={span:8,rise:2.5,tilt:25,blk:'shell',count:0,playing:!RM,pt:0,hold:0};
+  var BLK={shell:{R:0.35,T:0.35,name:'Shell block'},report:{R:0.141,T:0.10,name:'Report block'}};
+  var U=10; // scene units per metre (S_MM = 0.01 per mm)
+  var v=ok?new Viewer(cv,{fov:30}):null; if(v) views.push(v);
+
+  function blockTris(R,T,tilt){ // triangles in metres, y up, centred at mid-height
+    var h=T/2, off=h*Math.tan(tilt*Math.PI/180), sg=[1,-1,1,-1,1,-1], V=[], tops=[], bots=[], E=[], F=[];
+    for(var k=0;k<=6;k++) V.push([R*Math.cos(k*Math.PI/3),0,R*Math.sin(k*Math.PI/3)]);
+    function add(a,b){ return [a[0]+b[0],a[1]+b[1],a[2]+b[2]]; }
+    for(k=0;k<6;k++){ var a=V[k], b=V[k+1], mx=(a[0]+b[0])/2, mz=(a[2]+b[2])/2, L=Math.hypot(mx,mz), n=[mx/L,0,mz/L];
+      var up=[n[0]*sg[k]*off,h,n[2]*sg[k]*off], dn=[-n[0]*sg[k]*off,-h,-n[2]*sg[k]*off];
+      var t=[add(a,up),add(b,up)], bo=[add(a,dn),add(b,dn)]; tops.push(t); bots.push(bo); E.push([a,b]);
+      F.push([t[0],t[1],b,bo[1],bo[0],a]); }
+    for(k=0;k<6;k++){ var vv=E[k][1], A=tops[k][1], B=tops[(k+1)%6][0], C=bots[k][1], D=bots[(k+1)%6][0];
+      if(Math.hypot(A[0]-B[0],A[2]-B[2])>1e-6){ F.push([A,vv,B]); F.push([C,D,vv]); } }
+    [tops,bots].forEach(function(ring){ var pts=[]; ring.forEach(function(l){ pts.push(l[0],l[1]); }); F.push(pts); });
+    // orient every face consistently: neighbours must run a shared edge in opposite directions
+    var ids=new Map(), nid=0; function id(p){ if(!ids.has(p)) ids.set(p,nid++); return ids.get(p); }
+    F=F.map(function(f){ var o=[]; f.forEach(function(p){ if(!o.length||o[o.length-1]!==p) o.push(p); }); if(o.length>1&&o[0]===o[o.length-1]) o.pop(); return o; });
+    var done=F.map(function(){return false;}), stack=[0]; done[0]=true;
+    function edges(f){ var e=[]; for(var i=0;i<f.length;i++) e.push(id(f[i])+'>'+id(f[(i+1)%f.length])); return e; }
+    while(stack.length){ var fi=stack.pop(), Ei=edges(F[fi]);
+      for(var fj=0;fj<F.length;fj++){ if(done[fj]) continue; var Ej=edges(F[fj]), same=false, opp=false;
+        Ej.forEach(function(e){ var ab=e.split('>'); if(Ei.indexOf(e)>=0) same=true; if(Ei.indexOf(ab[1]+'>'+ab[0])>=0) opp=true; });
+        if(same||opp){ if(same) F[fj]=F[fj].slice().reverse(); done[fj]=true; stack.push(fj); } } }
+    var tri=[], vol=0;
+    F.forEach(function(f){ var c=[0,0,0]; f.forEach(function(p){ c[0]+=p[0]/f.length; c[1]+=p[1]/f.length; c[2]+=p[2]/f.length; });
+      for(var i=0;i<f.length;i++) tri.push([c,f[i],f[(i+1)%f.length]]); });
+    tri.forEach(function(t){ var a=t[0],b=t[1],c=t[2]; vol+=(a[0]*(b[1]*c[2]-b[2]*c[1])-a[1]*(b[0]*c[2]-b[2]*c[0])+a[2]*(b[0]*c[1]-b[1]*c[0]))/6; });
+    if(vol<0) tri=tri.map(function(t){ return [t[0],t[2],t[1]]; });
+    return {tri:tri,vol:Math.abs(vol)}; }
+  var GEO={};
+  function geo(R,T,tilt){ var key=R+'|'+T+'|'+tilt; if(GEO[key]) return GEO[key]; var bt=blockTris(R,T,tilt), pos=[];
+    bt.tri.forEach(function(t){ t.forEach(function(p){ pos.push(p[0]*U,p[1]*U,p[2]*U); }); });
+    var g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals();
+    return (GEO[key]={g:g,vol:bt.vol}); }
+
+  function gen(){ var b=BLK[SH.blk], R=b.R, T=b.T, span=SH.span, rise=Math.min(SH.rise,span/2);
+    var Rs=(span*span/4+rise*rise)/(2*rise), phMax=2*Math.atan(2*rise/span), Rp=2*Rs*Math.sin(phMax/2), d=Math.sqrt(3)*R;
+    var a1=Math.PI/6, v1=[d*Math.cos(a1),d*Math.sin(a1)], v2=[d*Math.cos(a1+Math.PI/3),d*Math.sin(a1+Math.PI/3)], N=Math.ceil(Rp/d)+1, cells=[];
+    for(var q=-N;q<=N;q++) for(var r=-N;r<=N;r++){ var x=q*v1[0]+r*v2[0], z=q*v1[1]+r*v2[1], rr=Math.hypot(x,z); if(rr>Rp) continue;
+      var ph=2*Math.asin(Math.min(1,rr/(2*Rs))), th=Math.atan2(z,x), Rm=Rs-T/2;
+      var n=new THREE.Vector3(Math.sin(ph)*Math.cos(th),Math.cos(ph),Math.sin(ph)*Math.sin(th));
+      cells.push({x:x,z:z,r:rr,ph:ph,n:n,p:[n.x*Rm,(rise-Rs)+n.y*Rm,n.z*Rm],rim:rr>Rp-d}); }
+    cells.sort(function(A,B){ return B.r-A.r; }); // build order: rim first, crown last
+    var g=geo(R,T,SH.tilt), mass=g.vol*2300, nRim=cells.filter(function(c){return c.rim;}).length;
+    return {cells:cells,Rs:Rs,rise:rise,span:span,phMax:phMax,R:R,T:T,mass:mass,geo:g.g,nRim:nRim,fit:1-Math.cos(phMax/2)}; }
+
+  var res=null, meshes=[];
+  function build(){ res=gen(); stats();
+    if(!v) return; while(v.root.children.length) v.root.remove(v.root.children[0]); meshes=[];
+    var mats={rim:new THREE.MeshStandardMaterial({color:new THREE.Color(0xD9B596).convertSRGBToLinear(),roughness:0.8,envMapIntensity:0.3,side:THREE.DoubleSide}),
+              shell:new THREE.MeshStandardMaterial({color:0xf2efe9,roughness:0.78,envMapIntensity:0.3,side:THREE.DoubleSide})};
+    var Y=new THREE.Vector3(0,1,0), qt=new THREE.Quaternion(), m4=new THREE.Matrix4(), one=new THREE.Vector3(1,1,1);
+    var im=new THREE.InstancedMesh(res.geo,mats.shell,res.cells.length); im.castShadow=true; im.receiveShadow=true;
+    var cR=new THREE.Color(0xD9B596).convertSRGBToLinear(), cS=new THREE.Color(0xf2efe9);
+    res.cells.forEach(function(c,i){ qt.setFromUnitVectors(Y,c.n); m4.compose(new THREE.Vector3(c.p[0]*U,c.p[1]*U,c.p[2]*U),qt,one); im.setMatrixAt(i,m4); im.setColorAt(i,c.rim?cR:cS); });
+    if(im.instanceColor) im.instanceColor.needsUpdate=true; im.material=new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.78,envMapIntensity:0.3,side:THREE.DoubleSide});
+    v.root.add(im); meshes=[im];
+    var span=res.span*U, rad=span*0.62+2;
+    v.target.set(0,res.rise*U*0.4,0); v.dist=rad*2.3+4;
+    var sun=v.sun; sun.position.set(rad*1.3,rad*1.1+4,rad*0.9); sun.target.position.set(0,0,0);
+    var sc=sun.shadow.camera, e=rad*1.3; sc.left=-e; sc.right=e; sc.top=e; sc.bottom=-e; sc.near=0.1; sc.far=rad*8+20; sc.updateProjectionMatrix();
+    if(!build.framed){ v.frame(new THREE.Vector3(0.8,0.55,0.95)); build.framed=true; } else if(v.controls){ v.controls.target.copy(v.target); v.controls.maxDistance=v.dist*2.2; v.controls.minDistance=v.dist*0.3; }
+    $('shSeq').max=res.cells.length; SH.count=SH.playing?0:res.cells.length; show(); }
+  function show(){ var n=Math.round(SH.count); if(meshes[0]) meshes[0].count=n; $('shSeq').value=n;
+    var ring=n<res.nRim?'rim ring':n>=res.cells.length?'closed':'shell';
+    $('shOut').textContent='Block '+n+' / '+res.cells.length+' · '+ring; }
+  function chip(ok,t){ return '<span class="chip '+(ok?'ok':'over')+'">'+t+'</span>'; }
+  function stats(){ var r=res, n=r.cells.length, fitp=r.fit*100;
+    $('oShSpan').textContent=fmt(r.span,1)+' m'; $('oShRise').textContent=fmt(r.rise,2)+' m'; $('oShTilt').textContent=fmt(SH.tilt,0)+'°';
+    $('shStats').innerHTML='<div><b>'+fmt(n,0)+'</b><span>Blocks · '+fmt(n-r.nRim,0)+' shell, '+fmt(r.nRim,0)+' rim</span></div>'+
+      '<div><b>'+fmt(r.mass,r.mass<100?1:0)+'<small>kg</small></b><span>One block at 2,300 kg/m³</span></div>'+
+      '<div><b>'+fmt(n*r.mass/1000,1)+'<small>t</small></b><span>Whole shell</span></div>'+
+      '<div><b>'+fmt(Math.PI*r.span*r.span/4,0)+'<small>m²</small></b><span>Floor inside</span></div>'+
+      '<div><b>'+fmt(r.Rs,2)+'<small>m</small></b><span>Sphere radius</span></div>'+
+      '<div><b>'+fmt(n*4/60,0)+'<small>h</small></b><span>One robot, 4 min a block</span></div>';
+    $('shChecks').innerHTML='<div><span>One block for one MoonBot limb (about 12 kg)</span>'+chip(r.mass<=13,r.mass<=13?'Fits':fmt(r.mass/12,0)+' × over')+'</div>'+
+      '<div><span>Flat pattern on the curve (this explorer\'s mapping): blocks crowd around the rim ring by about '+fmt(fitp,0)+' % and open the same amount up the slope</span>'+chip(fitp<=5,fitp<=5?'Small':fitp<=12?'Trim rim':'Re-map')+'</div>'+
+      '<div><span>Rise '+fmt(r.rise,2)+' m on '+fmt(r.span,1)+' m span'+(SH.rise>r.span/2?' (capped at a hemisphere)':'')+'</span><span class="chip q">'+fmt(r.rise/r.span,2)+' rise / span</span></div>'; }
+
+  function on(id,fn){ $(id).addEventListener('input',fn); }
+  on('shSpan',function(){ SH.span=+this.value; var rmax=SH.span/2; $('shRise').max=rmax; if(SH.rise>rmax){ SH.rise=rmax; $('shRise').value=rmax; } build(); });
+  on('shRise',function(){ SH.rise=+this.value; build(); });
+  on('shTilt',function(){ SH.tilt=+this.value; build(); });
+  $('shBlk').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(this.querySelectorAll('button'),function(x){ x.setAttribute('aria-pressed',x===b?'true':'false'); }); SH.blk=b.dataset.b; build(); });
+  $('shSeq').addEventListener('input',function(){ SH.playing=false; $('shPlay').textContent='Play'; SH.count=+this.value; show(); });
+  $('shPlay').addEventListener('click',function(){ SH.playing=!SH.playing; this.textContent=SH.playing?'Pause':'Play'; if(SH.playing&&SH.count>=res.cells.length) SH.count=0; });
+  $('shPlay').textContent=SH.playing?'Pause':'Play';
+  views.shTick=function(dt){ if(!SH.playing||!res||!v||!v.visible) return;
+    if(SH.count>=res.cells.length){ SH.hold+=dt; if(SH.hold>2.5){ SH.hold=0; SH.count=0; } return; }
+    SH.count=Math.min(res.cells.length,SH.count+dt*Math.max(25,res.cells.length/9)); show(); };
+  build();
+})();
+
 /* ---------- quick checks ---------- */
 function arch(){ var sp=+$('aSpan').value, R=sp/2+H/2, tR=H/R, maxSpan=2*(H/0.107-H/2);
   $('oSpan').textContent=fmt(sp,0)+' mm'; $('aRatio').textContent=fmt(tR,3); $('aMax').innerHTML=fmt(maxSpan/1000,2)+'<small>m</small>';
@@ -1940,7 +1829,7 @@ $('pMass').addEventListener('input',push); $('pMu').addEventListener('input',pus
 /* ---------- loop ---------- */
 if(ok){ var last=performance.now();
   (function loop(t){ var dt=Math.min(0.05,(t-last)/1000); last=t;
-    if(views.heroTick) views.heroTick(t); if(views.jTick) views.jTick(t); if(views.bTick) views.bTick(dt); if(views.pTick) views.pTick(); if(views.dTick) views.dTick(dt); if(views.gTick) views.gTick(dt,t);
+    if(views.heroTick) views.heroTick(t); if(views.jTick) views.jTick(t); if(views.bTick) views.bTick(dt); if(views.pTick) views.pTick(); if(views.dTick) views.dTick(dt); if(views.gTick) views.gTick(dt,t); if(views.shTick) views.shTick(dt);
     views.forEach(function(v){ v.render(); }); requestAnimationFrame(loop); })(last);
 }
 })();
