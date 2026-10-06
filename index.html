@@ -313,7 +313,7 @@ footer b{color:var(--ink); font-weight:500}
 </div>
 <div class="steps" id="steps">
 <div class="step" data-label="Report 02"><div class="wrap" style="width:100%"><div class="title">
-<img class="lablogo" src="img/srl_logo.png" width="412" height="174" alt="The Space Robotics Lab">
+<img class="lablogo" src="srl_logo.png" width="412" height="174" alt="The Space Robotics Lab">
 <p class="eyebrow">Space Robotics Lab · Tohoku University · Report 02</p>
 <h1><span>Moonwalk 2.0</span>From the site to the pavement</h1>
 <p class="lede">Report 01 defined the block families. This report starts on the ground: it compares four candidate sites near the south pole, defines one hexagonal block, paves with it to manage dust, and raises the first wall and column from that pavement, tested in Isaac Sim.</p>
@@ -440,7 +440,7 @@ footer b{color:var(--ink); font-weight:500}
 <div><span class="fk">Handling</span><h3>Grip from the top or the side</h3><p>Every block has the same flat top, so a top grip or suction cup works across the family. A side grip on the tilted faces is the other option. Both go into Isaac Sim next; the pockets are at the corners, so either grip stays clear of them.</p></div>
 </div>
 <h3 class="sub">The single block in Grasshopper</h3>
-<figure style="margin:0"><img src="img/block_gh.jpg" alt="Grasshopper canvas of the single block: input sliders Gap, R, Tilt and T; a Hexagon group with Polygon, Explode, Curve Middle, End Points and Unit Vector; a Tilt group computing (T / 2) x tan(tilt) with alternating signs; a Side lines group moving each edge up and down and out and in; a Block group with Ruled Surface, Brep Join and Cap Holes" style="width:100%;display:block;background:#d4d0c8"><figcaption class="note" style="margin-top:8px">Grasshopper · the block from four sliders, in five groups: Inputs, Hexagon, Tilt, Side lines, Block</figcaption></figure>
+<figure style="margin:0"><img src="block_gh.jpg" alt="Grasshopper canvas of the single block: input sliders Gap, R, Tilt and T; a Hexagon group with Polygon, Explode, Curve Middle, End Points and Unit Vector; a Tilt group computing (T / 2) x tan(tilt) with alternating signs; a Side lines group moving each edge up and down and out and in; a Block group with Ruled Surface, Brep Join and Cap Holes" style="width:100%;display:block;background:#d4d0c8"><figcaption class="note" style="margin-top:8px">Grasshopper · the block from four sliders, in five groups: Inputs, Hexagon, Tilt, Side lines, Block</figcaption></figure>
 <div class="flow flow5" style="margin-top:20px">
 <div><span class="k">1 · Inputs</span><b>R, T, Tilt, Gap</b><p>Hexagon radius, thickness, side tilt, and the clearance passed on to the array.</p></div>
 <div><span class="k">2 · Hexagon</span><b>Six edges</b><p>Polygon of radius R, exploded into edges; the midpoint of each gives its outward direction.</p></div>
@@ -666,7 +666,7 @@ for q in range(-R, R + 1):
 </div>
 </div>
 <div class="play" style="background:var(--surface)"><button type="button" id="gpPlay">Pause</button><input type="range" id="gpSeq" min="0" max="10" value="0" aria-label="Build step"><output id="gpOut"></output></div>
-<figure style="margin:24px 0 0"><img src="img/rhino_pad.jpg" alt="Rhino model of the graded pad: flat hexagonal core and tilted blocks towards the edge, shown in top, perspective, front and side views" style="width:100%;display:block"><figcaption class="note" style="margin-top:8px">Rhino model graded_pad_v01 · top, perspective from below, front and side views</figcaption></figure>
+<figure style="margin:24px 0 0"><img src="rhino_pad.jpg" alt="Rhino model of the graded pad: flat hexagonal core and tilted blocks towards the edge, shown in top, perspective, front and side views" style="width:100%;display:block"><figcaption class="note" style="margin-top:8px">Rhino model graded_pad_v01 · top, perspective from below, front and side views</figcaption></figure>
 <div class="steps2">
 <div><b>One cell, one top plane</b><p>Every block fills its hexagon and shares the same top. Nothing on the pad stands higher than anything else.</p></div>
 <div><b>Closed where things land</b><p>The core is plain 0° hexagons: no pockets under landing legs, wheels or robot feet.</p></div>
@@ -886,8 +886,8 @@ for q in range(-R, R + 1):
 <tr><td>B · full tilt</td><td>211 free</td><td>35° everywhere</td><td><span class="chip ok">Holds completely</span></td><td>211 of 211 free blocks settled under 5 mm; none moved more than 5 mm (max 0.0 mm).</td></tr>
 </tbody></table></div>
 <div class="figs">
-<figure><video class="isv" poster="vid/pad_graded_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, pad A graded: with only the rim held, the flat core blocks drop through and pile up on the ground below while the tilted rings stand"><source src="vid/pad_graded.mp4" type="video/mp4"><source src="vid/pad_graded.webm" type="video/webm"></video><figcaption>Pad A, graded · rim held only · the 0° core drops out, the tilted rings stand · lunar gravity, 5 s</figcaption></figure>
-<figure><video class="isv" poster="vid/pad_tilted_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, pad B full tilt: with only the rim held, the whole pad stands as one piece"><source src="vid/pad_tilted.mp4" type="video/mp4"><source src="vid/pad_tilted.webm" type="video/webm"></video><figcaption>Pad B, full tilt 35° · rim held only · all 211 free blocks stay in place · lunar gravity, 5 s</figcaption></figure>
+<figure><video class="isv" poster="pad_graded_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, pad A graded: with only the rim held, the flat core blocks drop through and pile up on the ground below while the tilted rings stand"><source src="pad_graded.mp4" type="video/mp4"><source src="pad_graded.webm" type="video/webm"></video><figcaption>Pad A, graded · rim held only · the 0° core drops out, the tilted rings stand · lunar gravity, 5 s</figcaption></figure>
+<figure><video class="isv" poster="pad_tilted_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, pad B full tilt: with only the rim held, the whole pad stands as one piece"><source src="pad_tilted.mp4" type="video/mp4"><source src="pad_tilted.webm" type="video/webm"></video><figcaption>Pad B, full tilt 35° · rim held only · all 211 free blocks stay in place · lunar gravity, 5 s</figcaption></figure>
 </div>
 <p style="margin-top:8px;font:400 12px/1.5 var(--mono);color:var(--muted)">Isaac Sim recordings at 1.62 m/s². Nothing under the pad: only the outer ring is fixed. The clips loop; pause them with the controls.</p>
 <div class="verdict2" style="margin-top:20px"><div><p class="eyebrow">What it means</p><h3>Tilt is a dial, set by zone</h3></div>
@@ -902,8 +902,8 @@ for q in range(-R, R + 1):
 <p>Every vertical element starts in the pavement, not on top of it. Under the first course sit plinth blocks: hexagonal prisms with the footprint and thickness of one pavement cell. They take the place of pavement blocks, so the tilted pavement around them holds them on every side like any other cell, and the wall or column above stands on a block that is part of the pavement.</p>
 </div>
 <div class="figs">
-<figure><img src="img/colA_plinth.jpg" alt="Rhino, Column A seen from below with the pavement hidden: six dark hexagonal plinth blocks under the corners of the column ring, each with a hole in its underside"><figcaption>Column A from below, pavement hidden · the six plinths under the corners of the ring</figcaption></figure>
-<figure><img src="img/colA_plinth_top.jpg" alt="Rhino plan of Column A at plinth level: the hexagonal ring of blocks with a plinth at each of its six corners"><figcaption>Plan at plinth level · each plinth sits on a pavement cell centre</figcaption></figure>
+<figure><img src="colA_plinth.jpg" alt="Rhino, Column A seen from below with the pavement hidden: six dark hexagonal plinth blocks under the corners of the column ring, each with a hole in its underside"><figcaption>Column A from below, pavement hidden · the six plinths under the corners of the ring</figcaption></figure>
+<figure><img src="colA_plinth_top.jpg" alt="Rhino plan of Column A at plinth level: the hexagonal ring of blocks with a plinth at each of its six corners"><figcaption>Plan at plinth level · each plinth sits on a pavement cell centre</figcaption></figure>
 </div>
 <div class="zones3" style="margin-top:28px">
 <div><span class="fk">Same cell, same grid</span><h3>No cut blocks</h3><p>A plinth is one pavement cell. The block column pitch equals the pavement pitch (0.346 m), so every plinth lands on a cell centre and the pavement closes around it with standard blocks.</p></div>
@@ -920,8 +920,8 @@ for q in range(-R, R + 1):
 <p>Wall A is built from the same hexagonal block family as the pavement, stood up into courses. The side faces tilt in alternating directions, so each course locks into the one below the way the pavement blocks lock to their neighbours, and the small triangular pockets show on both faces. The column pitch equals the pavement pitch (0.346 m), so the wall lands on the pavement grid without cut blocks. Plinth blocks (orange) set into the pavement carry it (see 06); cap blocks (blue) close the top course.</p>
 </div>
 <div class="figs">
-<figure><img src="img/wallA_rhino.jpg" alt="Rhino, four views of Wall A on its pavement strip: plan, front, side and perspective, with the alternating tilted faces and the triangular pockets"><figcaption>Rhino · Wall A on its pavement strip: plan, front, side and perspective</figcaption></figure>
-<figure><img src="img/wallA_gh.jpg" alt="Grasshopper definition of Wall A: sliders for pavement and wall parameters feeding one Python component, with outputs for pavement, plinth, wall, cap, risers and runs, and an info panel"><figcaption>Grasshopper · one Python component, eleven sliders, six outputs plus a live info panel</figcaption></figure>
+<figure><img src="wallA_rhino.jpg" alt="Rhino, four views of Wall A on its pavement strip: plan, front, side and perspective, with the alternating tilted faces and the triangular pockets"><figcaption>Rhino · Wall A on its pavement strip: plan, front, side and perspective</figcaption></figure>
+<figure><img src="wallA_gh.jpg" alt="Grasshopper definition of Wall A: sliders for pavement and wall parameters feeding one Python component, with outputs for pavement, plinth, wall, cap, risers and runs, and an info panel"><figcaption>Grasshopper · one Python component, eleven sliders, six outputs plus a live info panel</figcaption></figure>
 </div>
 <div class="tw" style="margin-top:20px"><table><thead><tr><th>Wall A · current definition</th><th>Value</th><th>Grasshopper input</th></tr></thead><tbody>
 <tr><td>Wall</td><td>8 columns × 4 courses · 2.89 m long · 1.70 m high</td><td>columns 8 · courses 4 · rows 2</td></tr>
@@ -945,10 +945,10 @@ for q in range(-R, R + 1):
 <tr><td>Load</td><td>Steady sideways acceleration K × g, across and along the wall</td><td>Pseudo-static moonquake; K = 0 to 0.8</td></tr>
 <tr><td>Limits</td><td>Overturning K = t / h = 0.19 · sliding K = 0.7</td><td>Overturning governs; "moved" means more than 10.1 mm</td></tr>
 </tbody></table></div>
-<figure style="margin:20px 0 0"><img src="img/wallA_isaac.jpg" alt="Isaac Sim: Wall A standing on its pavement strip under lunar gravity, blue cap blocks on top, orange plinth blocks at the base" style="width:100%;max-width:760px;display:block"><figcaption class="note" style="margin-top:8px">Isaac Sim · Wall A at rest on its pavement strip before the load is applied</figcaption></figure>
+<figure style="margin:20px 0 0"><img src="wallA_isaac.jpg" alt="Isaac Sim: Wall A standing on its pavement strip under lunar gravity, blue cap blocks on top, orange plinth blocks at the base" style="width:100%;max-width:760px;display:block"><figcaption class="note" style="margin-top:8px">Isaac Sim · Wall A at rest on its pavement strip before the load is applied</figcaption></figure>
 <div class="figs">
-<figure><video class="isv" poster="vid/wall_across_k02_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Wall A loaded across at K = 0.2: the wall rocks over as one body and falls onto its side"><source src="vid/wall_across_k02.mp4" type="video/mp4"><source src="vid/wall_across_k02.webm" type="video/webm"></video><figcaption>Across the wall · K = 0.2 · the wall rocks over as one body · 10 s</figcaption></figure>
-<figure><video class="isv" poster="vid/wall_along_k03_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Wall A loaded along its length at K = 0.3: the free end unravels column by column while the rest of the wall stands"><source src="vid/wall_along_k03.mp4" type="video/mp4"><source src="vid/wall_along_k03.webm" type="video/webm"></video><figcaption>Along the wall · K = 0.3 · the free end peels off column by column · 10 s</figcaption></figure>
+<figure><video class="isv" poster="wall_across_k02_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Wall A loaded across at K = 0.2: the wall rocks over as one body and falls onto its side"><source src="wall_across_k02.mp4" type="video/mp4"><source src="wall_across_k02.webm" type="video/webm"></video><figcaption>Across the wall · K = 0.2 · the wall rocks over as one body · 10 s</figcaption></figure>
+<figure><video class="isv" poster="wall_along_k03_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Wall A loaded along its length at K = 0.3: the free end unravels column by column while the rest of the wall stands"><source src="wall_along_k03.mp4" type="video/mp4"><source src="wall_along_k03.webm" type="video/webm"></video><figcaption>Along the wall · K = 0.3 · the free end peels off column by column · 10 s</figcaption></figure>
 </div>
 <h3 class="sub">Results</h3>
 <div class="tw"><div class="isg" id="isg"></div></div>
@@ -967,8 +967,8 @@ for q in range(-R, R + 1):
 <p>Column A closes the same wall block into a ring: twelve block columns around a hexagon, corner blocks at the six angles and side blocks between them, six courses high, standing on six plinths set into its pavement (see 06). The hollow core is filled with loose regolith as ballast and stays open at the top for services. It stands on a pavement of the same hexagonal blocks, two rings wider than the column.</p>
 </div>
 <div class="figs">
-<figure><img src="img/colA_rhino.jpg" alt="Rhino, four views of Column A: plan with the hexagonal ring of blocks and hollow core on a hexagonal pavement, perspective, front and side wireframes"><figcaption>Rhino · Column A by layer: pavement, plinth, wall, corner, cap, fill and service</figcaption></figure>
-<figure><img src="img/colA_gh.jpg" alt="Grasshopper definition of Column A: Ring, courses and fill density sliders plus the shared wall parameters feeding a Python component with outputs for pavement, plinth, wall, corner, cap, fill, risers and runs, and an info panel"><figcaption>Grasshopper · the column component reuses the wall parameters and adds ring, courses and fill density</figcaption></figure>
+<figure><img src="colA_rhino.jpg" alt="Rhino, four views of Column A: plan with the hexagonal ring of blocks and hollow core on a hexagonal pavement, perspective, front and side wireframes"><figcaption>Rhino · Column A by layer: pavement, plinth, wall, corner, cap, fill and service</figcaption></figure>
+<figure><img src="colA_gh.jpg" alt="Grasshopper definition of Column A: Ring, courses and fill density sliders plus the shared wall parameters feeding a Python component with outputs for pavement, plinth, wall, corner, cap, fill, risers and runs, and an info panel"><figcaption>Grasshopper · the column component reuses the wall parameters and adds ring, courses and fill density</figcaption></figure>
 </div>
 <div class="tw" style="margin-top:20px"><table><thead><tr><th>Column A · current definition</th><th>Value</th><th>Grasshopper input</th></tr></thead><tbody>
 <tr><td>Column</td><td>12 block columns around · 6 courses · 2.50 m high</td><td>Ring 2 · courses 6</td></tr>
@@ -980,7 +980,7 @@ for q in range(-R, R + 1):
 <tr><td>Count</td><td>6 plinths · 30 side · 36 corner · 6 caps · 55 pavement</td><td></td></tr>
 <tr><td>Mass</td><td>Blocks and pavement 8.3 t · regolith fill 2.7 t · total 10.9 t</td><td></td></tr>
 </tbody></table></div>
-<figure style="margin:20px 0 0"><img src="img/colA_isaac.jpg" alt="Isaac Sim: Column A standing on its hexagonal pavement, blue cap blocks around the open top, orange plinth blocks at the base" style="width:100%;max-width:760px;display:block"><figcaption class="note" style="margin-top:8px">Isaac Sim · Column A standing on its pavement under lunar gravity</figcaption></figure>
+<figure style="margin:20px 0 0"><img src="colA_isaac.jpg" alt="Isaac Sim: Column A standing on its hexagonal pavement, blue cap blocks around the open top, orange plinth blocks at the base" style="width:100%;max-width:760px;display:block"><figcaption class="note" style="margin-top:8px">Isaac Sim · Column A standing on its pavement under lunar gravity</figcaption></figure>
 <h3 class="sub">Isaac Sim: moonquake test</h3>
 <div class="tw"><table><thead><tr><th>Load</th><th>Result</th><th>Reading</th></tr></thead><tbody>
 <tr><td>Lunar gravity only</td><td><span class="chip ok">Stands</span></td><td>The ring stands on its plinths and keeps its shape.</td></tr>
@@ -988,8 +988,8 @@ for q in range(-R, R + 1):
 <tr><td>Very strong moonquake · K = 0.8</td><td><span class="chip over">Shakes apart</span></td><td>As at K = 0.5.</td></tr>
 </tbody></table></div>
 <div class="figs">
-<figure><video class="isv" poster="vid/col_strong_a_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Column A under a very strong moonquake: the ring of blocks breaks apart and the blocks scatter across the ground"><source src="vid/col_strong_a.mp4" type="video/mp4"><source src="vid/col_strong_a.webm" type="video/webm"></video><figcaption>Column A · very strong moonquake · run 1 · 10 s</figcaption></figure>
-<figure><video class="isv" poster="vid/col_strong_b_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Column A under a very strong moonquake, second run: the column breaks apart and the blocks scatter"><source src="vid/col_strong_b.mp4" type="video/mp4"><source src="vid/col_strong_b.webm" type="video/webm"></video><figcaption>Column A · very strong moonquake · run 2 · 10 s</figcaption></figure>
+<figure><video class="isv" poster="col_strong_a_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Column A under a very strong moonquake: the ring of blocks breaks apart and the blocks scatter across the ground"><source src="col_strong_a.mp4" type="video/mp4"><source src="col_strong_a.webm" type="video/webm"></video><figcaption>Column A · very strong moonquake · run 1 · 10 s</figcaption></figure>
+<figure><video class="isv" poster="col_strong_b_poster.jpg" muted loop playsinline controls preload="metadata" aria-label="Isaac Sim video, Column A under a very strong moonquake, second run: the column breaks apart and the blocks scatter"><source src="col_strong_b.mp4" type="video/mp4"><source src="col_strong_b.webm" type="video/webm"></video><figcaption>Column A · very strong moonquake · run 2 · 10 s</figcaption></figure>
 </div>
 <p class="note" style="margin-top:8px">First runs. The physics settings (contacts and solver) are being tuned; the results will be updated with the next runs.</p>
 </div></section>
@@ -1444,7 +1444,7 @@ var SITE_DATA={ // lat (deg, south negative), lon (deg east), diameter km. Posit
   var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true}); renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
   renderer.outputEncoding=THREE.sRGBEncoding; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.0;
   var scene=new THREE.Scene(), camera=new THREE.PerspectiveCamera(32,1,0.002,200), R=1.6, KM=R/LUNAR_R;
-  var loader=new THREE.TextureLoader(), src=window.MOON_TEX||{map:'tex/moon.jpg',nrm:'tex/moon_n.jpg'};
+  var loader=new THREE.TextureLoader(), src=window.MOON_TEX||{map:'moon.jpg',nrm:'moon_n.jpg'};
   var map=loader.load(src.map); map.encoding=THREE.sRGBEncoding; map.anisotropy=renderer.capabilities.getMaxAnisotropy();
   var nmap=loader.load(src.nrm); nmap.anisotropy=map.anisotropy;
   var moon=new THREE.Mesh(new THREE.SphereGeometry(R,256,160),new THREE.MeshStandardMaterial({map:map,normalMap:nmap,normalScale:new THREE.Vector2(1.6,1.6),roughness:1,metalness:0}));
